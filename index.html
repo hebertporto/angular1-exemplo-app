@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Produtos APP</title>
+
+        <meta name="description" content="Produtos APP">
+        <meta name="author" content="Doctormate">
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+
+        <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <header>
+              <navbar></navbar>
+            </header>
+
+            <div ui-view></div>
+        </div>
+
+
+        <script src='lib/angular/angular.js'></script>
+        <script src='lib/jquery/dist/jquery.js'></script>
+        <script src='lib/angular-messages/angular-messages.js'></script>
+        <script src='lib/bootstrap/dist/js/bootstrap.js'></script>
+        <script src='lib/angular-animate/angular-animate.js'></script>
+        <script src='lib/angular-ui-router/release/angular-ui-router.js'></script>
+        <script src='lib/angular-bootstrap/ui-bootstrap.js'></script>
+        <script src='lib/angular-bootstrap/ui-bootstrap-tpls.js'></script>
+
+        <script src="www/app.js"></script>
+        <script src="www/controllers/homeCtrl.js"></script>
+
+       <script src="www/services/productsAPIService.js"></script>
+        
+         <!-- <script src="www/controllers/dashboardCtrl.js"></script>
+        // <script src="www/controllers/productsCtrl.js"></script>
+
+        // <script src="www/components/navbar/navbar.component.js"></script>
+
+        // <script src="www/interceptors/loadingInterceptor.js"></script>
+
+        // <script src="www/value/configValue.js"></script> -->
+    </body>
+</html>
