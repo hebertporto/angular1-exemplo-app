@@ -13,16 +13,25 @@
 		'app_controllers',
 		'app_services',
 		'app_components',
-		'app_interceptors'
+		'app_interceptors',
+		'satellizer'
 	])
-	.config(['$urlRouterProvider', '$stateProvider',
-		function  ($urlRouterProvider, $stateProvider) {
+	.config(['$urlRouterProvider', '$stateProvider', '$authProvider',
+		function  ($urlRouterProvider, $stateProvider, $authProvider) {
 		   
+		   $authProvider.loginUrl = "http://localhost:3000/users/authenticate";
+
 		   $stateProvider
             .state('home', {
                 url: '/',
                 templateUrl: 'templates/home/home.html',
                 controller: 'homeCtrl',
+                controllerAs: 'vm'
+            })
+            .state('signin', {
+                url: '/signin',
+                templateUrl: 'templates/authentication/signin.html',
+                controller: 'authCtrl',
                 controllerAs: 'vm'
             });
                                 ;

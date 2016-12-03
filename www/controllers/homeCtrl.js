@@ -8,11 +8,12 @@
 		   function homeCtrl(productsAPIService){
 		   	  
 		   	  var vm = this;
-		   	  vm.title = "Lista de Produtos";
-		   	  vm.products = {};
-		   	  vm.product  = { name: ''};
-		   	  vm.send = createProduct;
-		   	  vm.remove = remove;
+		   	  
+		   	  vm.title 		= "Lista de Produtos";
+		   	  vm.products 	= {};
+		   	  vm.product  	= { name: ''};
+		   	  vm.send 		= createProduct;
+		   	  vm.remove 	= remove;
 		   	  
 		   	  /////////////////
 			  getAllProducts();
@@ -48,9 +49,5 @@
 		   	  						console.log("err", err);
 		   	  					});
 		   	  }
-
-
-
-
 		   }
 })();
