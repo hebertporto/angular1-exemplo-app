@@ -33,12 +33,30 @@
                 templateUrl: 'templates/authentication/signin.html',
                 controller: 'authCtrl',
                 controllerAs: 'vm'
+            })
+            .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: 'templates/dashboard/dashboard.html',
+                controller: 'dashboardCtrl',
+                controllerAs: 'vm'
             });
                                 ;
 			$urlRouterProvider.otherwise('/');
 		}])
-	.run(function  () {
-		
+	.config(['$httpProvider', function($httpProvider){
+		$httpProvider.interceptors.push('AuthInterceptor');
+	}])
+	.run(function  ($rootScope, $state, authenticateService) {
+
+		  // $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    //             if (next.auth) {
+    //                 if (!authenticateService.getToken()) {
+    //                     $rootScope.$evalAsync(function() {
+    //                         $state.go('login');
+    //                     });
+    //                 }
+    //             }
+    //         });
 	});
 
 })();

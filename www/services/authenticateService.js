@@ -18,9 +18,10 @@
 			}
 
 			var _login = function (objForm){
-				$auth.login(objForm)
+				return $auth.login(objForm)
 					.then(function (result){
-						tokenControlService.setItem('token', result.data.token);
+						tokenControlService.setItem('token', result.data.data.token);
+						return result.data.status;
 					})
 					.catch(function (err){
 						console.log("error", err);

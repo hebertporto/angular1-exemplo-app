@@ -9,7 +9,7 @@
 		  function tokenControlService (){
 
 		  	var _setItem = function (key, value){
-		  		return localStorage.setItem(key, val);
+		  		return localStorage.setItem(key, value);
 		  	}
 
 		  	var _getItem = function (key){
@@ -17,7 +17,7 @@
 		  	}
 
 		  	var _removeItem = function (key){
-		  		return localStorage.removeItem(key, val);
+		  		return localStorage.removeItem(key);
 		  	}
 
 		  	return {

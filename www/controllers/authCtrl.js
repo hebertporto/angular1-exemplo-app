@@ -4,9 +4,9 @@
 		  .module('app_controllers')
 		  .controller('authCtrl', authCtrl);
 
-		  authCtrl.$inject = ['authenticateService'];
+		  authCtrl.$inject = ['authenticateService', '$state', '$http', '$auth'];
 
-		  function authCtrl(authenticateService){
+		  function authCtrl(authenticateService, $state, $http, $auth){
 		  	
 		  	var vm = this;
 
@@ -14,12 +14,11 @@
 		  	vm.signup = signup;
 
 		  	function signin (objForm){
-		  		authenticateService.login(objForm)
-			  		.then(function(result){
-			  			
+			  	authenticateService.login(objForm).then(function(result){
+			  			$state.go('dashboard');
 			  		})
 			  		.catch(function(err){
-
+			  			console.log("error ao logar")
 			  		});
 
 		  		console.log("logando");
