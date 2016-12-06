@@ -43,8 +43,8 @@
                                 ;
 			$urlRouterProvider.otherwise('/');
 		}])
-	.config(['$httpProvider', function($httpProvider){
-		$httpProvider.interceptors.push('AuthInterceptor');
+	.config(['$httpProvider', function($httpProvider) {
+		$httpProvider.interceptors.push('loadingInterceptor');
 	}])
 	.run(function  ($rootScope, $state, authenticateService) {
 

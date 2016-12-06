@@ -9,7 +9,7 @@
 		function AuthInterceptor (authenticateService, $q, tokenControlService) {
 			return {
 				request: function (config) {
-					config.readers = config.headers || {};
+					config.headers = config.headers || {};
 
 					if(authenticateService.getAuthenticate()){
 						config.headers['Authorization'] = tokenControlService.getItem('token');
